@@ -1,0 +1,59 @@
+{
+  "name": "unique-id",
+  "displayName": "unique id",
+  "description": "Create unique IDs to avoid colision",
+  "version": "0.0.1",
+  "license": "Apache-2.0",
+  "engines": {
+    "vscode": "^1.81.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "unique-id.uuid",
+        "title": "Generate unique uuid",
+        "category": "Unique-id"
+      },
+      {
+        "command": "unique-id.currentTimeInMilliseconds",
+        "title": "Generate current time in milliseconds",
+        "category": "Unique-id"
+      },
+      {
+        "command": "unique-id.currentTimeInMillisecondsWithSequence",
+        "title": "Generate current time in milliseconds with sequence",
+        "category": "Unique-id"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "20.2.5",
+    "@types/uuid": "^9.0.2",
+    "@types/vscode": "^1.81.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.8",
+    "@typescript-eslint/parser": "^5.59.8",
+    "@vscode/test-electron": "^2.3.2",
+    "eslint": "^8.41.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.3"
+  },
+  "dependencies": {
+    "uuid": "^9.0.0"
+  }
+}
