@@ -1,6 +1,6 @@
 # unique-id README
 
-This plugin will assist developers in creating unique IDs through various strategies.
+This plugin will assist developers in creating unique IDs through various strategies. 
 
 ## Features
 
