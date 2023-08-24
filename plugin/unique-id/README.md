@@ -1,6 +1,6 @@
 # unique-id README
 
-The vscode plugin going to help to create unique ids using different strategies.
+This plugin will assist developers in creating unique IDs through various strategies.
 
 ## Features
 

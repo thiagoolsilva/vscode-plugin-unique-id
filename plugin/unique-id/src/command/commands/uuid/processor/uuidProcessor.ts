@@ -1,4 +1,4 @@
-import { IUUIDProcessor } from "./IUUDProcessor";
+import { IUUIDProcessor } from "./IuuidProcessor";
 import { v4 } from "uuid";
 import * as vscode from "vscode";
 

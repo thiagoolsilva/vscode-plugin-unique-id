@@ -1,6 +1,6 @@
 import { ICommand } from "../../contract/ICommand";
 import * as vscode from "vscode";
-import { IUUIDProcessor } from "./processor/IUUDProcessor";
+import { IUUIDProcessor } from "./processor/IuuidProcessor";
 
 export class UUIDCommand implements ICommand {
   public constructor(

@@ -1,3 +1,4 @@
+import { Constants } from "../../../../utils/constants";
 import { ICurrentTimeSeqProcessor } from "./ICurrentTimeSeqProcessor";
 import * as vscode from "vscode";
 
@@ -13,7 +14,7 @@ export class CurrentTimeSeqProcessor implements ICurrentTimeSeqProcessor {
     const currentTimeInMilliseconds = currentDate.getTime().toString();
 
     const localStorage = this.context.workspaceState;
-    const sequenceKey = "uniqueIdSequence";
+    const sequenceKey = Constants.SEQUENCE_KEY;
     let currentSequence = localStorage.get(sequenceKey, 0);
     currentSequence++;
 

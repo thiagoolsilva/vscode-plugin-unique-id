@@ -28,6 +28,11 @@
         "command": "unique-id.currentTimeInMillisecondsWithSequence",
         "title": "Generate current time in milliseconds with sequence",
         "category": "Unique-id"
+      },
+      {
+        "command": "unique-id.resetSequence",
+        "title": "Reset sequence number",
+        "category": "Unique-id"
       }
     ]
   },
