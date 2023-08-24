@@ -2,9 +2,10 @@
 import * as vscode from "vscode";
 import { CommandInvoker } from "./command/CommandInvoker";
 import { UUIDCommand } from "./command/commands/uuid/UUIDCommand";
-import { CurrentTimeInMillisecondsCommand } from "./command/commands/CurrentTimeInMillisecondsCommand";
 import { CurrentTimeInMillisecondWithSeqCommand } from "./command/commands/CurrentTimeInMillisecondWithSeqCommand";
 import { UUIDProcessor } from "./command/commands/uuid/processor/UUIDProcessor";
+import { CurrentTimeInMillisecondsCommand } from "./command/commands/timeInMilliseconds/CurrentTimeInMillisecondsCommand";
+import { CurrentTimeProcessor } from "./command/commands/timeInMilliseconds/processor/CurrentTimeProcessor";
 
 // Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
@@ -20,9 +21,11 @@ export function activate(context: vscode.ExtensionContext) {
   let currentTimeInMillisecondsCommand = vscode.commands.registerCommand(
     "unique-id.currentTimeInMilliseconds",
     () => {
-      const invoker = new CommandInvoker(
-        new CurrentTimeInMillisecondsCommand()
+      const command = new CurrentTimeInMillisecondsCommand(
+        vscode.window.activeTextEditor,
+        new CurrentTimeProcessor()
       );
+      const invoker = new CommandInvoker(command);
       invoker.init();
     }
   );
