@@ -1,2 +1,2 @@
 # vscode-plugin-unique-id
-The plugin going to help devs to create unique ids
+This plugin will assist developers in creating unique IDs through various strategies.
