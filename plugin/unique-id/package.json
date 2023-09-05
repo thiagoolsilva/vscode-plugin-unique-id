@@ -1,6 +1,11 @@
 {
   "name": "unique-id",
+  "publisher": "Thiago Lopes da Silva",
   "displayName": "unique id",
+  "galleryBanner": {
+    "color": "#030518",
+    "theme": "dark"
+  },
   "description": "Create unique IDs to avoid colision",
   "version": "1.0.0",
   "license": "Apache-2.0",
@@ -17,6 +22,10 @@
   "categories": [
     "Other"
   ],
+  "homepage": "https://github.com/thiagoolsilva/vscode-plugin-unique-id",
+  "bugs": {
+    "url": "https://github.com/thiagoolsilva/vscode-plugin-unique-id/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thiagoolsilva/vscode-plugin-unique-id.git"
