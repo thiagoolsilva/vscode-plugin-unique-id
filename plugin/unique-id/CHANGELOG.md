@@ -1,9 +1,10 @@
 # Change Log
 
-All notable changes to the "unique-id" extension will be documented in this file.
+## 1.0.0
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+Adding features
 
-## [Unreleased]
-
-- Initial release
+1. Create Id by UUID;
+2. Create Id by current time in milliseconds;
+3. Create Id by current time with sequence;
+4. Reset sequence

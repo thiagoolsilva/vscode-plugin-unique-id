@@ -1,40 +1,30 @@
-# unique-id README
+# unique-id
 
-This plugin will assist developers in creating unique IDs through various strategies. 
+This plugin will assist developers in creating unique IDs through various strategies.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+This plugin will assist in creating unique IDs using the strategies of uuid, uuid with a sequence, and current time in milliseconds.
 
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+![](images/features.gif)
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+Vscode 1.81.0+
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+NDA
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+Release Notes
 
 ### 1.0.0
 
-First version
+Adding features
+
+1. Create Id by UUID;
+2. Create Id by current time in milliseconds;
+3. Create Id by current time with sequence;
+4. Reset sequence
