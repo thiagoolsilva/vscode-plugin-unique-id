@@ -7,9 +7,20 @@
   "engines": {
     "vscode": "^1.81.0"
   },
+  "keywords": [
+    "vscode",
+    "code",
+    "unique",
+    "id",
+    "generator"
+  ],
   "categories": [
     "Other"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiagoolsilva/vscode-plugin-unique-id.git"
+  },
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
