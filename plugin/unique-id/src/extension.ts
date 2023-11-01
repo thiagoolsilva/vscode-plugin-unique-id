@@ -4,6 +4,7 @@ import { ResetSequenceCommandDispFact } from "./command/commands/resetSequence/r
 import { CurrentTimeInMillisecondsCommandDispFact } from "./command/commands/timeInMilliseconds/currentTimeInMillisecondsCommandDispFact";
 import { CurrentTimeInMillisecondWithSeqCommandDispFact } from "./command/commands/timeInMillisecondsSeq/currentTimeInMillisecondWithSeqCommandDispFact";
 import { UuidCommandDispFact } from "./command/commands/uuid/uuidCommandDispFact";
+import { NanoIdDispFact } from "./command/commands/nanoId/nanoIdDispFact";
 
 // Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
@@ -11,7 +12,8 @@ export function activate(context: vscode.ExtensionContext) {
     ResetSequenceCommandDispFact.create(context),
     CurrentTimeInMillisecondsCommandDispFact.create(),
     CurrentTimeInMillisecondWithSeqCommandDispFact.create(context),
-    UuidCommandDispFact.create()
+    UuidCommandDispFact.create(),
+    NanoIdDispFact.create()
   );
 }
 
