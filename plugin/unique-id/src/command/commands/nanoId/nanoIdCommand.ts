@@ -14,16 +14,24 @@
  * limitations under the License.
  */
 
-import { ICurrentTimeProcessor } from "./ICurrentTimeProcessor";
+import { ICommand } from "../../contract/ICommand";
+import { INanoIdProcessor } from "./processor/INanoIdProcessor";
 import * as vscode from "vscode";
 
-export class CurrentTimeProcessor implements ICurrentTimeProcessor {
-  public currentTimeInMilliseconds(): string {
-    const currentDate = new Date();
-    return currentDate.getTime().toString();
-  }
-  
-  public showMessageError(): void {
-    vscode.window.showErrorMessage("None of the text editors is active.");
-  }
+export class NanoIdCommand implements ICommand {
+  public constructor(
+    private readonly editor: vscode.TextEditor | undefined,
+    private readonly processor: INanoIdProcessor
+  ) {}
+
+  public execute(): void {
+    if (this.editor) {
+      const uuid = this.processor.createNanoId();
+      const location = this.editor.selection.active;
+      this.editor.edit((editBuilder) => {
+        editBuilder.insert(location, uuid);
+      });
+    } else {
+      this.processor.showErrorMessage();
+    }  }
 }

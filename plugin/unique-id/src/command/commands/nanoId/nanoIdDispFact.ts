@@ -17,24 +17,19 @@
 import { Disposable } from "vscode";
 import * as vscode from "vscode";
 import { CommandInvoker } from "../../CommandInvoker";
-import { CurrentTimeInMillisecondsCommand } from "./currentTimeInMillisecondsCommand";
-import { CurrentTimeProcessor } from "./processor/currentTimeProcessor";
+import { NanoIdCommand } from "./nanoIdCommand";
+import { NanoIdProcessor } from "./processor/nanoIdProcessor";
 
-
-export class CurrentTimeInMillisecondsCommandDispFact {
+export class NanoIdDispFact {
   
   public static create(): Disposable {
-    return vscode.commands.registerCommand(
-      "unique-id.currentTimeInMilliseconds",
-      () => {
-        const command = new CurrentTimeInMillisecondsCommand(
-          vscode.window.activeTextEditor,
-          new CurrentTimeProcessor()
-        );
-        const invoker = new CommandInvoker(command);
-        invoker.init();
-      }
-    );
-  }
-  
+    return vscode.commands.registerCommand("unique-id.nanoId", () => {
+      const command = new NanoIdCommand(
+        vscode.window.activeTextEditor,
+        new NanoIdProcessor()
+      );
+      const invoker = new CommandInvoker(command);
+      invoker.init();
+    });
+  }  
 }

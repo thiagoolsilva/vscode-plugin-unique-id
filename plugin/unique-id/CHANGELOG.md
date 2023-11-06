@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.0.0
+
+Adding features
+
+1. Create Id by NanoId;
+
 ## 1.0.0
 
 Adding features
