@@ -19,28 +19,29 @@ import { IConfigSequenceProcessor } from "./IConfigSequenceProcessor";
 import * as vscode from "vscode";
 
 export class ConfigSequenceProcessor implements IConfigSequenceProcessor {
-  public constructor(
-    private readonly  context: vscode.ExtensionContext
-  ) {}
-  
-  public configSequence(sequence:number): boolean {
+  public constructor(private readonly context: vscode.ExtensionContext) {}
+
+  public configSequence(sequence: number): void {
     let wasSaved = false;
     const localStorage = this.context.workspaceState;
     const sequenceKey = Constants.SEQUENCE_KEY;
 
     // update sequence into local storage
-    if(sequence !== null && typeof sequence === "number") {
+    if (sequence !== null && !isNaN(sequence) && Number.isInteger(sequence)) {
       localStorage.update(sequenceKey, sequence);
       wasSaved = localStorage.get(sequenceKey, 0) === sequence;
-    }
 
-    return wasSaved;
-    
+      if (wasSaved) {
+        vscode.window.showInformationMessage(`Sequence [${sequence}] saved`);
+      } else {
+        this.showMessageError(`Not possible to save sequence [${sequence}]`);
+      }
+    } else {
+      this.showMessageError("Invalid input");
+    }
   }
 
- 
-
-  public showMessageError(): void {
-    vscode.window.showErrorMessage("Invalid input data.");
-  }  
-};
+  public showMessageError(message: string): void {
+    vscode.window.showErrorMessage(message);
+  }
+}

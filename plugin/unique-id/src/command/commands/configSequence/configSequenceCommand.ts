@@ -19,25 +19,18 @@ import { IConfigSequenceProcessor } from "./processor/IConfigSequenceProcessor";
 import * as vscode from "vscode";
 
 export class ConfigSequenceCommand implements ICommand {
-  public constructor(
-    private readonly editor: vscode.TextEditor | undefined,
-    private readonly processor: IConfigSequenceProcessor,
-  ) {}
+  public constructor(private readonly processor: IConfigSequenceProcessor) {}
 
   public async execute(): Promise<void> {
-    if (this.editor) {
-      const userInput = await vscode.window.showInputBox({
-        prompt: "Configure sequence number",
-        value: "0",
-      });
+    const userInput = await vscode.window.showInputBox({
+      prompt: "Configure sequence number",
+      value: "0",
+    });
 
-      if (userInput) {
-        vscode.window.showInformationMessage(`user sequence number: ${userInput}`);
+    if (userInput) {
+      this.processor.configSequence(Number(userInput));
     } else {
-        vscode.window.showInformationMessage('Invalid user input data.');
-    }    
-    } else {
-      this.processor.showMessageError();
+      this.processor.showMessageError("Empty input data");
     }
   }
 }

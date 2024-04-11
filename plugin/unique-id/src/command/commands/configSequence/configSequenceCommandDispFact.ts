@@ -24,7 +24,6 @@ export class ConfigSequenceCommandDispFact {
   public static create(context: vscode.ExtensionContext): Disposable {
     return vscode.commands.registerCommand("unique-id.configSequence", () => {
       const command = new ConfigSequenceCommand(
-        vscode.window.activeTextEditor,
         new ConfigSequenceProcessor(context)
       );
 

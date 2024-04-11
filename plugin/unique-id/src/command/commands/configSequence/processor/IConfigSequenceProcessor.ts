@@ -15,6 +15,6 @@
  */
 
 export interface IConfigSequenceProcessor {
-  configSequence(sequence: number): boolean;
-  showMessageError(): void;
+  configSequence(sequence: number): void;
+  showMessageError(message:string): void;
 }
