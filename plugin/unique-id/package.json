@@ -58,6 +58,11 @@
         "command": "unique-id.resetSequence",
         "title": "Reset sequence number",
         "category": "Unique-id"
+      },
+      {
+        "command": "unique-id.configSequence",
+        "title": "Config sequence number",
+        "category": "Unique-id"
       }
     ]
   },
