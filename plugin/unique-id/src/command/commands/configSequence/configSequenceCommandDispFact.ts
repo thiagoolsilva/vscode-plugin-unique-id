@@ -1,5 +1,5 @@
 /**
- * Copyright © 2023 Thiago Lopes da Silva Google LLC
+ * Copyright © 2023-2024 Thiago Lopes da Silva Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,22 +17,18 @@
 import { Disposable } from "vscode";
 import * as vscode from "vscode";
 import { CommandInvoker } from "../../CommandInvoker";
-import { CurrentTimeInMillisecondWithSeqCommand } from "./currentTimeInMillisecondWithSeqCommand";
-import { CurrentTimeSeqProcessor } from "./processor/currentTimeSeqProcessor";
+import { ConfigSequenceCommand } from "./configSequenceCommand";
+import { ConfigSequenceProcessor } from "./processor/configSequenceProcessor";
 
-export class CurrentTimeInMillisecondWithSeqCommandDispFact {
+export class ConfigSequenceCommandDispFact {
   public static create(context: vscode.ExtensionContext): Disposable {
-    return vscode.commands.registerCommand(
-      "unique-id.currentTimeInMillisecondsWithSequence",
-      () => {
-        const command = new CurrentTimeInMillisecondWithSeqCommand(
-          vscode.window.activeTextEditor,
-          new CurrentTimeSeqProcessor(context)
-        );
+    return vscode.commands.registerCommand("unique-id.configSequence", () => {
+      const command = new ConfigSequenceCommand(
+        new ConfigSequenceProcessor(context)
+      );
 
-        const invoker = new CommandInvoker(command);
-        invoker.init();
-      }
-    );
+      const invoker = new CommandInvoker(command);
+      invoker.init();
+    });
   }
 }
