@@ -20,6 +20,12 @@ NDA
 
 Release Notes
 
+### 2.1.0
+
+Adding features
+
+1. Create user sequence configuration;
+
 ### 2.0.0
 
 Adding features
