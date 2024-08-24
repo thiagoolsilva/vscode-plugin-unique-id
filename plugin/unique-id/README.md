@@ -22,6 +22,12 @@ NDA
 
 Release Notes
 
+### 2.1.2
+
+Bug Fix
+
+1. updating @vscode/vsce library to dev dependency  
+
 ### 2.1.1
 
 Adding features
