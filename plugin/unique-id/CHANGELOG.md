@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.1.1
+
+Adding features
+
+1. Adding icon
+
 ## 2.1.0
 
 Adding features

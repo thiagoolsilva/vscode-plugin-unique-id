@@ -2,6 +2,8 @@
 
 This plugin will assist developers in creating unique IDs through various strategies.
 
+![](images/logo.png)
+
 ## Features
 
 This plugin will assist in creating unique IDs using the strategies of uuid, uuid with a sequence, and current time in milliseconds.
@@ -19,6 +21,12 @@ NDA
 ## Release Notes
 
 Release Notes
+
+### 2.1.1
+
+Adding features
+
+1. Adding icon
 
 ### 2.1.0
 

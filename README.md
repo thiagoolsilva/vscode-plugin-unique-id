@@ -1,5 +1,8 @@
 # vscode-plugin-unique-id
+
 This plugin will assist developers in creating unique IDs through various strategies.
+
+![](images/logo.png)
 
 ## Features
 
@@ -18,6 +21,12 @@ NDA
 ## Release Notes
 
 Release Notes
+
+### 2.1.1
+
+Adding features
+
+1. Adding icon
 
 ### 2.1.0
 
